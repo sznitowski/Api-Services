@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <img style="width:60px"; src="../img/img.png"/>
+    <a class="navbar-brand text-light" href="#">Api-Servicios</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="http://localhost:3000/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="/users/list">Servicios</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="/users/showCreate">Registrarse</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#contact">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div id="user-detail-container" style=" text-align: center;">
+
+  <form class="user-form" action="/users/update" method="POST">
+  
+    <input type="text" name="id" value="{{user.id}}" style="display: none;" />
+    <img class="user-cover" name="coverUrl" src={{user.coverUrl}}/>
+
+    <label for="service">Servicio: </label>
+    <input type="text" name="service" list="buscarservicios" value="{{user.service}}"/>
+    <datalist id="buscarservicios">
+            <option value="Animador">
+            <option value="Albañil">
+            <option value="Artesano">
+            <option value="Cajero">
+            <option value="Carpintero">
+            <option value="Cerrajero">
+            <option value="Chofer o Conductor">
+            <option value="Cocinero">
+            <option value="Electricista">
+            <option value="Enfermera">
+            <option value="Fumigador">
+            <option value="Gasista matriculado">
+            <option value="Herrero">  
+            <option value="Niñera">
+            <option value="Panadero">
+            <option value="Profesor particular">
+            <option value="Repartidor o Servimoto">
+            <option value="Sastre">
+            <option value="Servicio domestico">
+            <option value="Tornero">
+            <option value="Vigilante">
+            <option value="Vendedor">
+            <option value="Zapatero">
+          </datalist>
+
+    <label for="name">Nombre: </label>
+    <input type="text" name="name" value="{{user.name}}" />
+
+    <label for="name">Contacto: </label>
+    <input type="text" name="contact" value="{{user.contact}}"/>
+
+     <label for="name">Ubicacion: </label>
+    <input type="text" name="location" list="citynames" value="{{user.location}}" />
+    <datalist id="citynames">
+            <option value="San Miguel de Tucuman">
+            <option value="Trancas">
+            <option value="Burruyacú">
+            <option value="Tafí Viejo">
+            <option value="Tafí del Valle">
+            <option value="Yerba Buena">
+            <option value="Lules">
+            <option value="Cruz Alta">
+            <option value="Leales">
+            <option value="Famaillá">
+            <option value="Monteros">
+            <option value="Chicligasta">
+            <option value="Simoca">
+            <option value="Río Chico">
+            <option value="Juan Bautista Alberdi">
+            <option value="La Cocha">
+            <option value="Graneros">
+          </datalist>
+   
+    <label for="coverUrl">URL de imagen de portada: </label>
+    <input type="text" name="coverUrl" value="{{user.coverUrl}}" />
+    <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar">Actualizar</button>
+    
+  </form>
+
+
+
+</div>

@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">Servicios</a>
+    <img style="width:80px"; src="../img/img.png"/>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="http://localhost:3000/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="/users/list">Servicios</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="/users/showCreate">Registrarse</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light btn-outline-success" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#contact">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row d-flex justify-content-center">
+<form class="user-form" action="/users/login" method="POST">
+<i class="fas fa-user-circle" style= "font-size: 200px"></i><h5>Iniciar sesion:</h5>
+
+   <!-- Nombre input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" >Usuario</label>
+    <input type="text" name="name" placeholder="Ingresa tu Usuario" />
+  </div>
+  <!-- Contraseña input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" >Contraseña</label>
+    <input type="password" name="password" placeholder="Ingresa tu contraseña" />
+  </div>
+  <button type="submit" class="btn btn-primary btn-block mb-4" value="ingresar">Ingresar</button>
+  <div class="text-center">
+    
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-github"></i>
+    </button>
+  </div>
+</form>
+</div>
+</div>

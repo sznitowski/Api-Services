@@ -1,0 +1,146 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">Servicios</a>
+    <img style="width:80px"; src="../img/img.png"/>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link text-light btn-outline-danger" href="http://localhost:3000/">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light btn-outline-danger" href="/users/list">Servicios</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link text-light btn-outline-danger" href="/users/showCreate">Registrarse</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light btn-outline-danger" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#contact">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row-login d-flex justify-content-center">
+<form class="user-form" action="/users/newService" method="POST">
+<i class="fas fa-user-circle" style= "font-size: 200px"></i><h5>Registrarase:</h5>
+   <!-- Nombre input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" >Usuario</label>
+    <input type="text" name="name" placeholder="Ingresa tu Usuario" />
+  </div>
+  {{!-- Servicios input --}}
+   <div class="form-outline mb-4">
+   <label class="form-label">Lista de Servicios</label>
+   <input type="text" list="buscarservicios" name="service"  placeholder="Busca un servicio"/>
+    <datalist id="buscarservicios">
+            <option value="Animador">
+            <option value="Albañil">
+            <option value="Artesano">
+            <option value="Cajero">
+            <option value="Carpintero">
+            <option value="Cerrajero">
+            <option value="Chofer o Conductor">
+            <option value="Cocinero">
+            <option value="Electricista">
+            <option value="Enfermera">
+            <option value="Fumigador">
+            <option value="Gasista matriculado">
+            <option value="Herrero">  
+            <option value="Niñera">
+            <option value="Panadero">
+            <option value="Profesor particular">
+            <option value="Repartidor o Servimoto">
+            <option value="Sastre">
+            <option value="Servicio domestico">
+            <option value="Tornero">
+            <option value="Vigilante">
+            <option value="Vendedor">
+            <option value="Zapatero">
+          </datalist>
+  </div>
+  <!-- Contraseña input -->
+   <div class="form-outline mb-4">
+    <label class="form-label" >Contraseña</label>
+    <input type="password" name="password" placeholder="Ingresa tu contraseña" />
+  </div>
+  <!-- Repetir contraseña input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" >Confirmar contraseña</label>
+    <input type="password" name="passwordConfirm" placeholder="Confirma tu contraseña" />
+  </div>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <label class="form-label">Correo electronico</label>
+    <input type="email" name="contact" class="form-control" placeholder="Ingrasa tu E-mail"/>   
+  </div>
+  <!-- Ubicacion input -->
+  <div class="form-outline mb-4">
+    <label class="form-label">Ubicacion</label>
+    <input type="text" name="location" list="citynames" placeholder="Filtra por ubicacion"/> 
+     <datalist id="citynames">
+            <option value="San Miguel de Tucuman">
+            <option value="Trancas">
+            <option value="Burruyacú">
+            <option value="Tafí Viejo">
+            <option value="Tafí del Valle">
+            <option value="Yerba Buena">
+            <option value="Lules">
+            <option value="Cruz Alta">
+            <option value="Leales">
+            <option value="Famaillá">
+            <option value="Monteros">
+            <option value="Chicligasta">
+            <option value="Simoca">
+            <option value="Río Chico">
+            <option value="Juan Bautista Alberdi">
+            <option value="La Cocha">
+            <option value="Graneros">
+          </datalist>
+  
+  <!-- Img -->
+    <label for="coverUrl">URL de img: </label>
+    <input oninput="updatePreview()" type="text" name="coverUrl" placeholder="añade una URL de imagen" value="{{img.coverUrl}}"/>
+    
+    <img id="cover-preview">
+     <button type="submit" class="btn btn-primary btn-block mb-4" value="Guardar">Guardar</button>
+</div>
+  <!-- Register buttons -->
+  <div class="text-center">
+    
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-github"></i>
+    </button>
+  </div>
+</form>
+</div>
+</div>
+
+<script>
+
+  function updatePreview() {
+    const previewImg = document.getElementById("cover-preview");
+    const inputUrl = document.getElementById("coverUrl");
+
+    previewImg.src = inputUrl.value;
+  }
+
+</script>

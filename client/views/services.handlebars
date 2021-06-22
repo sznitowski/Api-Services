@@ -1,0 +1,64 @@
+<div class="bg-light clearfix" style="text-align: center">
+<button class="btn btn-dark btn-outline-warning" onclick="addUser()"><i class='bx bxs-user-circle'></i>Crear Usuario</button>
+<a class="btn btn-dark btn-outline-warning" href="http://localhost:3000/"><i class='bx bx-search-alt-2'></i>Inicio</a>
+<a class="btn btn-dark btn-outline-warning" href="/users/login"><i class='bx bxs-user-check'></i>Login</a>
+</div>
+
+<div class="row d-flex justify-content-center">
+    {{#each users}}
+    <div class="main-user">
+      <img class="user-cover" src="{{this.coverUrl}}"/>
+	    <p> Servicio: {{this.service}} </p>
+	    <p> Nombre: {{this.name}} </p>
+	    <p> Contacto: {{this.contact}}</p>
+	    <p> Ubicacion: {{this.location}}</p>
+      <div class="bg-light clearfix" style="display:flex;">
+      <button class="btn btn-info btn-outline-light" onclick="viewUserDetail('{{this.id}}')">Modificar</button>
+      <button class="btn btn-info btn-outline-light" onclick='deleteUser("{{this.id}}", "{{this.service}}", "{{this.name}}")'>Eliminar</button>
+    </div>
+    </div>
+    {{/each}}
+</div>
+
+   <div id="confirmation-modal">
+  <div id="confirmation-modal-content">
+    <h4>¿Desea eliminar este usuario?</h4>
+    <p id="confirmation-modal-detail"></p>
+    <button class="btn btn-dark btn-outline-success" onclick="modalCancel()">Cancelar</button>
+    <button class="btn btn-dark btn-outline-success" onclick="modalAccept()">Eliminar</button>
+  </div>
+</div> 
+ 
+<script>
+  const modal = document.getElementById("confirmation-modal");
+  let idToBeDeleted = "";
+
+  function addUser() {
+    window.location.href = '/users/showCreate';
+  }
+
+  function viewUserDetail(id) {
+    window.location.href = `/users/detail?id=${id}`;
+  }
+
+  function deleteUser(id, service, name) {
+    const modalDetail = document.getElementById("confirmation-modal-detail");
+    modalDetail.textContent = `Se eliminará el usuario "${service}" de ${name}.`
+    idToBeDeleted = id;
+    modal.style.visibility = "visible";
+  }
+
+  function modalCancel() {
+    modal.style.visibility = "hidden";
+    idToBeDeleted = "";
+  }
+
+  function modalAccept() {
+    window.location.href = `/users/delete?id=${idToBeDeleted}`;
+  }
+
+  function sortBy(criteria) {
+    window.location.href=` /users/list?sortBy=${criteria}`
+  }
+
+</script>

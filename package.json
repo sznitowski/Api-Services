@@ -1,0 +1,24 @@
+{
+  "name": "crud-discos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "connect-mongo": "^4.4.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mongo": "^0.1.0",
+    "mongo-store": "0.0.2",
+    "mongodb": "^3.6.9",
+    "start": "^5.1.0"
+  }
+}
