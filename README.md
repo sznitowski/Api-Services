@@ -7,5 +7,4 @@
 <li>npm i express</li>
 <li>npm i mongo db</li>
 <li>npm i express-handlebars</li>
-<li>npm i express-session</li>
 </ul>
