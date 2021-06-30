@@ -18,6 +18,8 @@ app.engine(
   expHbs({
     defaultLayout: "main",
     layoutsDir: "client/views/layouts",
+    /* extname: "hbs",  */
+    partialsDir: "client/views/partials",
   })
 );
 app.set("view engine", "handlebars");

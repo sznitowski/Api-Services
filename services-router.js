@@ -143,6 +143,9 @@ router.get("/delete", (req, res) => {
 });
 
 // login user 
+router.get("/login", (req, res) => {
+  res.render("login", {});
+});
 router.post("/login", (req, res) => {
   const date = {name: req.body.name, password: req.body.password};
   let loginValido = false;
