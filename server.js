@@ -3,6 +3,7 @@ const expHbs = require("express-handlebars");
 const path = require("path");
 const servicesRouter = require("./services-router");
 const session = require("express-session");
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -33,12 +34,18 @@ app.use("/users", servicesRouter);
 app.get("/login", (req, res) => {
   res.render("login");
 });
+//user validation
+
+app.get("/", (req, res) => {
+  res.render("regist", { service: "services" });
+});
 // session
 app.use(session({
-  secret: "asd123asd123",
-  resave: "false",
-  saveUninitialized: "false"
-}))
+  secret: "comunidad It",
+  resave: false,
+  saveUninitialized: false
+})) 
+app.use(bodyParser.urlencoded({extended: true}));
 // port
 app.listen(3000, () => {
   console.log("EL Servidor corre en el puerto 3000...");

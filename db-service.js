@@ -1,80 +1,59 @@
 const mongodb = require("mongodb");
-const connURL = "mongodb+srv://sznitowski:a32110804@cluster0.tznzh.mongodb.net/servicestest?authSource=admin&replicaSet=atlas-uryh7n-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+const connURL =
+  "mongodb+srv://sznitowski:a32110804@cluster0.tznzh.mongodb.net/servicestest?authSource=admin&replicaSet=atlas-uryh7n-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
 const mongTopo = { useUnifiedTopology: true };
 const dbName = "services";
 const UsersCollName = "user";
 
-// buscar varios
-const getAllUsers = (sortBy, cbError, cbData) => {
+//  consultar en la base de datos por servicios
+function getAllUsersByService(service, cbError, cbData) {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
     if (err) {
+      console.log("Hubo un error conectando con el servidor:", err);
       cbError(err);
       return;
     }
-
     const UsersCollection = conn.db(dbName).collection(UsersCollName);
 
-    let sortObject;
-
-    switch (sortBy) {
-      case "service":
-        sortObject = { service: 1 };
-        break;
-      case "img":
-        sortObject = { img: 1 };
-        break;
-      case "name":
-        sortObject = { name: 1 };
-        break;
-      case "location":
-        sortObject = { location: 1 };
-        break;
-      case "contact":
-        sortObject = { contact: 1 };
-        break;
-      default:
-        sortObject = {};
-        break;
-    }
-
-    UsersCollection.find()
-      .sort(sortObject)
-      .toArray((err, UsersList) => {
+    UsersCollection.find({ service: { $regex: service } }).toArray(
+      (err, users) => {
         if (err) {
-          cbError(err);
+          console.log("Hubo un error convirtiendo la consulta a Array:", err);
+          conn.close();
           return;
         }
 
-        conn.close();
-
-        cbData(UsersList);
-      });
+        cbData(users);
+      }
+    );
   });
-};
-// buscar uno
-const getUser = (id, cbError, cbData) => {
+}
+
+//  consultar en la base de datos por ubicacion, 123 probando
+/*  function getAllUsersByLocation(location, cbError, cbData) {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
     if (err) {
+      console.log("Hubo un error conectando con el servidor:", err);
       cbError(err);
       return;
     }
+    const UsersLocation = conn.db(dbName).collection(UsersCollName);
 
-    const UsersCollection = conn.db(dbName).collection(UsersCollName);
+      UsersLocation.find({ location: {$regex: location} }).toArray(
+      (err, data) => {
+        if (err) {
+          console.log("Hubo un error convirtiendo la consulta a Array:", err);
+          conn.close();
+          return;
+        }
 
-    UsersCollection.findOne({ _id: mongodb.ObjectId(id) }, (err, user) => {
-      if (err) {
-        cbError(err);
-        return;
+        cbData(data);
       }
-
-      conn.close();
-
-      cbData(user);
-    });
+    );
   });
-};
+} */
 
-// crear
+// crear usuario
 const insertUser = (newUser, cbError, cbOk) => {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
     if (err) {
@@ -96,6 +75,7 @@ const insertUser = (newUser, cbError, cbOk) => {
     });
   });
 };
+
 // modificar
 const updateUser = (id, newData, cbError, cbOk) => {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
@@ -130,6 +110,7 @@ const updateUser = (id, newData, cbError, cbOk) => {
     );
   });
 };
+
 // borrar
 const deleteUser = (id, cbError, cbOk) => {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
@@ -180,8 +161,8 @@ const logUser = (credentials, cbError, cbData) => {
 };
 
 module.exports = {
-  getAllUsers,
-  getUser,
+  getAllUsersByService,
+  //getAllUsersByLocation,
   insertUser,
   updateUser,
   deleteUser,
