@@ -2,58 +2,69 @@ const express = require("express");
 const dbService = require("./db-service");
 const utils = require("./utils");
 const path = require("path");
-const router = express.Router();
+//const session = require("express-session");
+const router = express.Router();-
+
 
 // Static
 router.use(express.static(path.join(__dirname, "client")));
 
-// buscar todos 
-router.get("/list", (req, res) => {
-  dbService.getAllUsers(
-    req.query.sortBy,
+// buscar por servicio
+ router.get("/list", (req, res) => {
+  let service = "";
+  const findUsersByService =  req.query.service ||"" ;
+
+  dbService.getAllUsersByService(
+    findUsersByService.toLowerCase(),
+
     (err) => {
       res.render("error", {
         error: err,
       });
+      return;
     },
     (users) => {
       res.render("services", {
         users: utils.formatUserListForView(users),
+        service,
+        
       });
+      return;
     }
   );
 });
 
-router.get("/detail", (req, res) => {
-  if (!req.query.id) {
-    res.render("error", {
-      error: "Información no válida",
-    });
-    return;
-  }
-  // buscar uno
-  dbService.getUser(
-    req.query.id,
-    (err) => {
-      res.render("error", {
-        error: err,
-      });
-    },
-    (user) => {
-      res.render("user", {
-        user: utils.formatUserForView(user),
-      });
-    }
-  );
-});
+// buscar por ubicacion
+/* router.get("/list", (req, res) => {
+  let location = ""; 
+  const findUsersByLocation = { location: { $regex: req.query.location ||"" } };
 
-// crear
+ dbService.getAllUsersByLocation(
+   findUsersByLocation.toLowerCase(),
+
+   (err) => {
+     res.render("error", {
+       error: err,
+     });
+     return;
+   },
+   (data) => {
+     res.render("services", {
+       data: utils.formatUserListForView(data),
+       location,
+
+     });
+     return;
+   }
+ );
+}); */
+
+// crear usuario
 router.get("/showCreate", (req, res) => {
-  res.render("regist", {} );
-})
+  res.render("regist", {});
+});
 
-router.post("/newService", (req, res ) => {
-
+router.post("/newService", (req, res) => {
   console.log(req.body);
 
   if (!utils.isValidUserData(req.body)) {
@@ -70,8 +81,8 @@ router.post("/newService", (req, res ) => {
     passwordConfirm: req.body.passwordConfirm,
     location: req.body.location,
     contact: req.body.contact,
-    img: req.body.coverUrl
-  }
+    img: req.body.coverUrl,
+  };
 
   dbService.insertUser(
     newUser,
@@ -94,7 +105,7 @@ router.post("/update", (req, res) => {
     });
     return;
   }
-  
+
   dbService.updateUser(
     req.body.id,
     req.body,
@@ -117,7 +128,7 @@ router.get("/delete", (req, res) => {
     });
     return;
   }
-  
+
   dbService.deleteUser(
     req.query.id,
     (err) => {
@@ -131,11 +142,7 @@ router.get("/delete", (req, res) => {
   );
 });
 
-// login
- router.get("/login", (req, res) => {
-  res.render("login", {} );
-})
-
+// login user 
 router.post("/login", (req, res) => {
   const date = {name: req.body.name, password: req.body.password};
   let loginValido = false;
@@ -156,19 +163,5 @@ router.post("/login", (req, res) => {
     }
   );
 });
-
-// session
-/* router.get("sigup", (req, res) => {
-  user.find((err, user) => {
-    console.log(user);
-    res.render("session");
-  });
-});
-router.post("/sessions"), (req, res) => {
-  user.findOne({ name: req.body.name, password:req.body.password}), (err, user) => {
-    req.session.user_id = user._id
-  }
-}
-*/
 
 module.exports = router;
