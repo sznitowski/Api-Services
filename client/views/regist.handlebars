@@ -1,111 +1,112 @@
 {{>header}}
 
-<div class="row-login d-flex justify-content-center">
+<div class="row-form">
 <form class="user-form" action="/users/newService" method="POST">
-<i class="fas fa-user-circle" style= "font-size: 200px"></i><h5>Registrarase:</h5>
+  <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
+    <h2 class="h3 mb-3 fw-normal">Por favor, ingrese sus datos.</h2>
+
    <!-- Nombre input -->
-  <div class="form-outline mb-4">
+  <div class="form-floating">
+    <input type="text" class="form-control" name="name" placeholder="Ingresa tu usuario">
     <label class="form-label" >Usuario</label>
-    <input type="text" name="name" placeholder="Ingresa tu Usuario" />
   </div>
+
   {{!-- Servicios input --}}
-   <div class="form-outline mb-4">
+   <div class="form-floating">
+   <input type="text" list="buscarservicios" name="service" class="form-control" placeholder="Selecciona un servicio"/>
    <label class="form-label">Lista de Servicios</label>
-   <input type="text" list="buscarservicios" name="service"  placeholder="Busca un servicio"/>
-    <datalist id="buscarservicios">
-            <option value="animador">
-            <option value="albañil">
-            <option value="artesano">
-            <option value="cajero">
-            <option value="carpintero">
-            <option value="cerrajero">
-            <option value="chofer">
-            <option value="cocinero">
-            <option value="electricista">
-            <option value="enfermera">
-            <option value="fumigador">
-            <option value="gasista">
-            <option value="herrero">  
-            <option value="niñera">
-            <option value="panadero">
-            <option value="profesor particular">
-            <option value="repartidor">
-            <option value="sastre">
-            <option value="servicio domestico">
-            <option value="tornero">
-            <option value="vigilante">
-            <option value="vendedor">
-            <option value="zapatero">
-          </datalist>
+     <datalist id="buscarservicios">
+       <option value="albañil">
+       <option value="animador">
+       <option value="artesano">
+       <option value="cajero">
+       <option value="carpintero">
+       <option value="cerrajero">
+       <option value="chofer">
+       <option value="cocinero">
+       <option value="costurera">
+       <option value="electricista">
+       <option value="enfermera">
+       <option value="fumigador">
+       <option value="gasista">
+       <option value="herrero">
+       <option value="jardinero">
+       <option value="medico">
+       <option value="medico">
+       <option value="modista">
+       <option value="mucama">  
+       <option value="niñera">
+       <option value="panadero">
+       <option value="peluquero">
+       <option value="pintor"> 
+       <option value="plomero">
+       <option value="podologo">
+       <option value="profesor particular">
+       <option value="repartidor">
+       <option value="sastre">
+       <option value="seguridad">
+       <option value="servicio domestico">
+       <option value="tecnico electronico">
+       <option value="tecnico en refrigeracion">
+       <option value="tecnico en refrigeracion">
+       <option value="vigilante">
+       <option value="vendedor">
+       <option value="zapatero">
+     </datalist>
   </div>
+
   <!-- Contraseña input -->
-   <div class="form-outline mb-4">
-    <label class="form-label" >Contraseña</label>
-    <input type="password" name="password" placeholder="Ingresa tu contraseña" />
+   <div class="form-floating">
+    <input type="password" class="form-control" name="password" placeholder="Ingrasa tu contraseña">
+    <label class="form-label" >contraseña</label>
   </div>
   <!-- Repetir contraseña input -->
-  <div class="form-outline mb-4">
-    <label class="form-label" >Confirmar contraseña</label>
-    <input type="password" name="passwordConfirm" placeholder="Confirma tu contraseña" />
+  <div class="form-floating">
+    <input type="password" class="form-control" name="passwordConfirm" placeholder="Confirma tu contraseña"/>
+    <label class="form-label" >confirmar contraseña</label>
   </div>
   <!-- Email input -->
-  <div class="form-outline mb-4">
-    <label class="form-label">Correo electronico</label>
-    <input type="email" name="contact" class="form-control" placeholder="Ingrasa tu E-mail"/>   
+  <div class="form-floating">
+    <input type="email" name="contact" class="form-control" placeholder="Ingrasa tu E-mail"/> 
+    <label class="form-label">Correo electronico</label>  
   </div>
   <!-- Ubicacion input -->
-  <div class="form-outline mb-4">
+  <div class="form-floating">
+    <input type="text" name="location" class="form-control" list="citynames" placeholder="Filtra por ubicacion"/> 
     <label class="form-label">Ubicacion</label>
-    <input type="text" name="location" list="citynames" placeholder="Filtra por ubicacion"/> 
      <datalist id="citynames">
-            <option value="San Miguel de Tucuman">
-            <option value="Trancas">
-            <option value="Burruyacú">
-            <option value="Tafí Viejo">
-            <option value="Tafí del Valle">
-            <option value="Yerba Buena">
-            <option value="Lules">
-            <option value="Cruz Alta">
-            <option value="Leales">
-            <option value="Famaillá">
-            <option value="Monteros">
-            <option value="Chicligasta">
-            <option value="Simoca">
-            <option value="Río Chico">
-            <option value="Juan Bautista Alberdi">
-            <option value="La Cocha">
-            <option value="Graneros">
-          </datalist>
-  
-  <!-- Img -->
-    <label for="coverUrl">URL de img: </label>
-    <input oninput="updatePreview()" type="text" name="coverUrl" placeholder="añade una URL de imagen" value="{{img.coverUrl}}"/>
-    
-    <img id="cover-preview">
-     <button type="submit" class="btn btn-primary btn-block mb-4" value="Guardar">Guardar</button>
-</div>
-  <!-- Register buttons -->
-  <div class="text-center">
-    
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-facebook-f"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-google"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-twitter"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-github"></i>
-    </button>
+        <option value="San Miguel de Tucuman">
+        <option value="Trancas">
+        <option value="Burruyacú">
+        <option value="Tafí Viejo">
+        <option value="Tafí del Valle">
+        <option value="Yerba Buena">
+        <option value="Lules">
+        <option value="Cruz Alta">
+        <option value="Leales">
+        <option value="Famaillá">
+        <option value="Monteros">
+        <option value="Chicligasta">
+        <option value="Simoca">
+        <option value="Río Chico">
+        <option value="Juan Bautista Alberdi">
+        <option value="La Cocha">
+        <option value="Graneros">
+      </datalist>
   </div>
-</form>
-</div>
-</div>
+          
+  <!-- Img -->
+  <div class="form-floating">
+    <input oninput="updatePreview()" type="text" name="coverUrl" class="form-control" placeholder="añade una URL de imagen" value="{{img.coverUrl}}"/>
+    <label for="coverUrl">URL de img: </label>
+  </div>
+    <img id="cover-preview"> 
+     <button type="submit" class="btn btn-primary btn-block mb-4" value="Guardar">Guardar</button>
+
+      <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+  </div>
+ </form>
+</div> 
 
 <script>
 
@@ -117,3 +118,7 @@
   }
 
 </script>
+
+<footer>
+   {{>footer}} 
+</footer>

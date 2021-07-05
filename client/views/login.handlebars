@@ -1,38 +1,34 @@
 {{>header}}
 
-<div class="row d-flex justify-content-center">
-<form class="user-form" action="/users/login" method="POST">
-<i class="fas fa-user-circle" style= "font-size: 200px"></i><h5>Iniciar sesion:</h5>
+<div class="row-form">
+  <form class="user-form" action="/users/login" method="POST">
 
-   <!-- Nombre input -->
-  <div class="form-outline mb-4">
-    <label class="form-label" >Usuario</label>
-    <input type="text" name="name" placeholder="Ingresa tu Usuario" />
-  </div>
-  <!-- Contraseña input -->
-  <div class="form-outline mb-4">
-    <label class="form-label" >Contraseña</label>
-    <input type="password" name="password" placeholder="Ingresa tu contraseña" />
-  </div>
-  <button type="submit" class="btn btn-primary btn-block mb-4" value="ingresar">Ingresar</button>
-  <div class="text-center">
+    <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
+    <h2 class="h3 mb-3 fw-normal">Por favor, ingrese sus datos.</h2>
+     <!-- Nombre input -->
+    <div class="form-floating">
+      <input type="text" class="form-control" name="name" placeholder="Ingresa tu usuario">
+      <label class="form-label" >Usuario</label>
+    </div>
+     <!-- Contraseña input -->
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" placeholder="Ingrasa tu contraseña">
+      <label class="form-label" >Contraseña</label>
+    </div>
+     
+  <button class="w-100 btn btn-lg btn-primary " value="ingresar" style="margin-top: 20px;">Ingresar</button>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> recordar usuario
+      </label>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+    </div>
     
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-facebook-f"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-google"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-twitter"></i>
-    </button>
-
-    <button type="button" class="btn btn-primary btn-floating mx-1">
-      <i class="fab fa-github"></i>
-    </button>
-  </div>
-</form>
+  </form>
 </div>
-</div>
+
+<footer>
+   {{>footer}} 
+</footer>
+

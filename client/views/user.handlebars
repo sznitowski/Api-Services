@@ -1,48 +1,72 @@
 {{>header}}
 
-  <div id="user-detail-container" style=" text-align: center;">
-
+  <div class="row-form">
   <form class="user-form" action="/users/update" method="POST">
   
-    <input type="text" name="id" value="{{user.id}}" style="display: none;" />
+  <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
+  <h2 class="h3 mb-3 fw-normal">Modifica tus datos</h2>
+  {{!-- Img --}}
+  <div class="form-floating">
+   <input type="text" name="id" value="{{user.id}}" style="display: none;" />
     <img class="user-cover" name="coverUrl" src={{user.coverUrl}}/>
-
-    <label for="service">Servicio: </label>
-    <input type="text" name="service" list="buscarservicios" value="{{user.service}}"/>
+  </div>
+  {{!-- input nombre --}}
+   <div class="form-floating">
+   <input type="text" class="form-control" name="name" value="{{user.name}}" placeholder="cambiar tu usuario"/>
+   <label class="form-label" >Usuario</label>
+   </div>
+   {{!-- Servicios input --}}
+   <div class="form-floating">
+   <input type="text" list="buscarservicios" name="service" class="form-control" value="{{user.service}}" placeholder="cambiar de servicio"/>
+   <label class="form-label">Lista de Servicios</label>
     <datalist id="buscarservicios">
-            <option value="Animador">
-            <option value="Albañil">
-            <option value="Artesano">
-            <option value="Cajero">
-            <option value="Carpintero">
-            <option value="Cerrajero">
-            <option value="Chofer o Conductor">
-            <option value="Cocinero">
-            <option value="Electricista">
-            <option value="Enfermera">
-            <option value="Fumigador">
-            <option value="Gasista matriculado">
-            <option value="Herrero">  
-            <option value="Niñera">
-            <option value="Panadero">
-            <option value="Profesor particular">
-            <option value="Repartidor o Servimoto">
-            <option value="Sastre">
-            <option value="Servicio domestico">
-            <option value="Tornero">
-            <option value="Vigilante">
-            <option value="Vendedor">
-            <option value="Zapatero">
+            <option value="animador">
+            <option value="albañil">
+            <option value="artesano">
+            <option value="cajero">
+            <option value="carpintero">
+            <option value="cerrajero">
+            <option value="chofer">
+            <option value="cocinero">
+            <option value="costurera">
+            <option value="electricista">
+            <option value="enfermera">
+            <option value="fumigador">
+            <option value="gasista">
+            <option value="herrero">
+            <option value="jardinero">
+            <option value="medico">
+            <option value="medico">
+            <option value="modista">
+            <option value="mucama">  
+            <option value="niñera">
+            <option value="panadero">
+            <option value="peluquero">
+            <option value="pintor">
+            <option value="plomero">
+            <option value="podologo">
+            <option value="profesor particular">
+            <option value="repartidor">
+            <option value="sastre">
+            <option value="seguridad">
+            <option value="servicio domestico">
+            <option value="tecnico electronico">
+            <option value="tecnico en refrigeracion">
+            <option value="tecnico en refrigeracion">
+            <option value="vigilante">
+            <option value="vendedor">
+            <option value="zapatero">
           </datalist>
-
-    <label for="name">Nombre: </label>
-    <input type="text" name="name" value="{{user.name}}" />
-
-    <label for="name">Contacto: </label>
-    <input type="text" name="contact" value="{{user.contact}}"/>
-
-     <label for="name">Ubicacion: </label>
-    <input type="text" name="location" list="citynames" value="{{user.location}}" />
+  </div>
+    <!-- Email input -->
+    <div class="form-floating">
+    <input type="email" name="contact" class="form-control" value="{{user.contact}}" placeholder="cambiar tu E-mail"/>
+    <label class="form-label">Correo electronico</label>
+    </div>
+     <!-- Ubicacion input -->
+    <div class="form-floating">
+    <input type="text" name="location" class="form-control" list="citynames" value="{{user.location}}" placeholder="cambiar tu ubicacion" />
+    <label for="form-label">Ubicacion:</label>
     <datalist id="citynames">
             <option value="San Miguel de Tucuman">
             <option value="Trancas">
@@ -62,13 +86,20 @@
             <option value="La Cocha">
             <option value="Graneros">
           </datalist>
-   
-    <label for="coverUrl">URL de imagen de portada: </label>
-    <input type="text" name="coverUrl" value="{{user.coverUrl}}" />
+    </div>
+    <!-- Img -->
+    <div class="form-floating">
+    <input type="text" name="coverUrl" class="form-control" value="{{user.coverUrl}}" placeholder="cambiar la imagen"/>
+    <label for="coverUrl">URL de img</label>
+    </div>
+
     <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar">Actualizar</button>
-    
+     <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
   </form>
 
 
-
 </div>
+
+<footer>
+   {{>footer}} 
+</footer>

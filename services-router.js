@@ -35,9 +35,9 @@ router.use(express.static(path.join(__dirname, "client")));
 });
 
 // buscar por ubicacion
-/* router.get("/list", (req, res) => {
+/*  router.get("/listLocation", (req, res) => {
   let location = ""; 
-  const findUsersByLocation = { location: { $regex: req.query.location ||"" } };
+  const findUsersByLocation =  req.query.location ||"";
 
  dbService.getAllUsersByLocation(
    findUsersByLocation.toLowerCase(),
@@ -73,7 +73,13 @@ router.post("/newService", (req, res) => {
     });
     return;
   }
+  // validaciones al crear usuario
+  if (req.body.name && req.body.password && req.body.passwordConfirm) {
 
+    // Verifico que la clave y su repetición coincidan
+    if (req.body.password == req.body.passworConfirm) {
+
+   
   const newUser = {
     service: req.body.service,
     name: req.body.name,
@@ -95,6 +101,17 @@ router.post("/newService", (req, res) => {
       res.redirect("/users/list");
     }
   );
+}else{
+  (res.render("error", {
+    error:"faltan datos.",
+  }))
+}
+
+}else{
+ (res.render("error", {
+   error:"las contraseñas no coinciden.",
+ }))
+}
 });
 
 // modificar
@@ -102,6 +119,7 @@ router.post("/update", (req, res) => {
   if (!req.body.id || !utils.isValidUserData(req.body)) {
     res.render("error", {
       error: "Datos no válidos para la actualización.",
+   
     });
     return;
   }
@@ -142,10 +160,11 @@ router.get("/delete", (req, res) => {
   );
 });
 
-// login user 
+// login
 router.get("/login", (req, res) => {
-  res.render("login", {});
-});
+  res.render("login", {} );
+})
+
 router.post("/login", (req, res) => {
   const date = {name: req.body.name, password: req.body.password};
   let loginValido = false;
@@ -166,5 +185,18 @@ router.post("/login", (req, res) => {
     }
   );
 });
+
+// session
+/*   router.get("/", (req, res) => {
+  user.find((err, user) => {
+    console.log(user);
+  });
+});
+router.post("/sessions"), (req, res) => {
+  user.findOne({ name: req.body.name, password:req.body.password}), (err, user) => {
+    req.session.user_id = user._id
+  }
+} 
+ */
 
 module.exports = router;

@@ -30,7 +30,7 @@ function getAllUsersByService(service, cbError, cbData) {
 }
 
 //  consultar en la base de datos por ubicacion, 123 probando
-/*  function getAllUsersByLocation(location, cbError, cbData) {
+/*   function getAllUsersByLocation(location, cbError, cbData) {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
     if (err) {
       console.log("Hubo un error conectando con el servidor:", err);
