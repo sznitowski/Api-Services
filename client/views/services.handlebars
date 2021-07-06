@@ -1,31 +1,86 @@
+<!-- Header -->
 {{>header}}
 
-<div class="row d-flex justify-content-center">
-  
-  <a><input type="search" id="inputService" placeholder="Buscar servicios"/></a>
-  <p><button type="submit" id="btnFindService" class="btn btn-dark btn-outline-warning" '({{this.service}})"'>Buscar</button></p>
-  
-    <a><input type="search" id="inputLocation" placeholder="Buscar por ubicacion"/></a>
-  <p><button type="submit" id="btnFindLocation" class="btn btn-dark btn-outline-warning" '({{this.location}})"'>Buscar</button></p>
-  
+<!-- Titulo service -->
+<div class="row" style="justify-content: center;">
+ <h4>Busca algun servicio! </h4>
+	 <h5>*Tambien puedes ingresar tus datos en nuestra base de datos, registrandote y ofrecer algun servicio.</h5>
+   </div>
 
+<!-- Input service -->
+<div class="row"  style="display: block;justify-content: center; text-align: center; margin-top: 20px;">
+<input type="search" list="buscarservicios" id="inputService" name="service" class="form-control" placeholder="Selecciona un servicio"
+style="width: 400px;"/>
+   <button type="submit" id="btnFindService" class="btn btn-success btn-outline-dark" '({{this.service}})"' style="width: 15%">Buscar</button>
+     <datalist id="buscarservicios">
+       <option value="albañil">
+       <option value="animador">
+       <option value="artesano">
+       <option value="cajero">
+       <option value="carpintero">
+       <option value="cerrajero">
+       <option value="chofer">
+       <option value="cocinero">
+       <option value="costurera">
+       <option value="electricista">
+       <option value="enfermera">
+       <option value="fumigador">
+       <option value="gasista">
+       <option value="herrero">
+       <option value="jardinero">
+       <option value="medico">
+       <option value="medico">
+       <option value="modista">
+       <option value="mucama">  
+       <option value="niñera">
+       <option value="panadero">
+       <option value="peluquero">
+       <option value="pintor"> 
+       <option value="plomero">
+       <option value="podologo">
+       <option value="profesor particular">
+       <option value="repartidor">
+       <option value="sastre">
+       <option value="seguridad">
+       <option value="servicio domestico">
+       <option value="tecnico electronico">
+       <option value="tecnico en refrigeracion">
+       <option value="tecnico en refrigeracion">
+       <option value="vigilante">
+       <option value="vendedor">
+       <option value="zapatero">
+     </datalist>
 </div>
-<div class="row d-flex justify-content-center">
-    {{#each users}}
-    <div class="main-user">
-      <img class="user-cover" src="{{this.coverUrl}}"/>
-	    <p> Servicio: {{this.service}} </p>
-	    <p> Nombre: {{this.name}} </p>
-	    <p> Contacto: {{this.contact}}</p>
-	    <p> Ubicacion: {{this.location}}</p>
-      <div class="bg-light clearfix" style="display:flex;">
-      <button class="btn btn-info btn-outline-light" onclick="viewUserDetail('{{this.id}}')">Modificar</button>
-      <button class="btn btn-info btn-outline-light" onclick='deleteUser("{{this.id}}", "{{this.service}}", "{{this.name}}")'>Eliminar</button>
-    </div>
-    </div>
+
+<!-- Table list -->
+<table class="table table-striped table-xl text-dark table-bordered" style="margin-top: 20px;">
+     <thead class="thead-body bg-light text-dark">
+     <tr>
+        <td>Servicio</td>
+        <td>Usuario</td>
+        <td>Información adicional</td>
+        <td>Contacto</td>
+        <td>Ubicacíon</td>
+      </tr>
+     </thead>
+    <tbody>
+   {{#each users}}
+	    <td> {{this.service}} </td>
+	    <td> {{this.name}} </td>
+      <td> {{this.description}} </td>
+	    <td> {{this.contact}}</td>
+	    <td> {{this.location}}</td>
+      <td class="td-actions" style="display:flex;">
+      <!-- Delete o upgrade user -->
+      {{!-- <button class="btn btn-info btn-outline-light" onclick="viewUserDetail('{{this.id}}')">Modificar</button>
+      <button class="btn btn-info btn-outline-light" onclick='deleteUser("{{this.id}}", "{{this.service}}", "{{this.name}}")'>Eliminar</button> --}}
+      </td>
+      </tr>
     {{/each}}
-</div>
+    </tbody>
+ </table>
 
+<!-- Modal -->
    <div id="confirmation-modal">
   <div id="confirmation-modal-content">
     <h4>¿Desea eliminar este usuario?</h4>
@@ -38,50 +93,37 @@
 <script>
   const modal = document.getElementById("confirmation-modal");
   const users = document.getElementById("main-user");
-  //
   const btnFindService = document.getElementById("btnFindService");
   const inputService = document.getElementById("inputService");
-  //
-   const btnFindLocation = document.getElementById("btnFindLocation");
-  const inputLocation = document.getElementById("inputLocation");
-  //
+  
   let idToBeDeleted = "";
-
   btnFindService.addEventListener("click", function () {
     inputService.value
     window.location.href = `/users/list?service=${inputService.value}`
   });
   
-  btnFindLocation.addEventListener("click", function () {
-    inputLocation.value
-    window.location.href = `/users/listLocation?location=${inputLocation.value}`
-    console.log(btnFindLocation);
-    console.log(inputLocation);
-  });
-
-  //
   function addUser() {
     window.location.href = '/users/showCreate';
   }
-
   function viewUserDetail(id) {
     window.location.href = `/users/detail?id=${id}`;
   }
-
   function deleteUser(id, service, name) {
     const modalDetail = document.getElementById("confirmation-modal-detail");
     modalDetail.textContent = `Se eliminará el usuario "${service}" de ${name}.`
     idToBeDeleted = id;
     modal.style.visibility = "visible";
   }
-
   function modalCancel() {
     modal.style.visibility = "hidden";
     idToBeDeleted = "";
   }
-
   function modalAccept() {
     window.location.href = `/users/delete?id=${idToBeDeleted}`;
   }
-
 </script>
+
+{{!-- footer --}}
+<footer>
+   {{>footer}} 
+</footer>

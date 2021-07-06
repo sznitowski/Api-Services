@@ -1,33 +1,35 @@
+<!-- Header -->
 {{>header}}
 
 <div class="row-form">
+  <!-- Form -->
   <form class="user-form" action="/users/login" method="POST">
 
     <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
-    <h2 class="h3 mb-3 fw-normal">Por favor, ingrese sus datos.</h2>
-     <!-- Nombre input -->
+    <h2 class="h3 mb-3 fw-normal" style="color: white">Por favor, ingrese sus datos.</h2>
+     <!-- userName input -->
     <div class="form-floating">
       <input type="text" class="form-control" name="name" placeholder="Ingresa tu usuario">
       <label class="form-label" >Usuario</label>
     </div>
-     <!-- Contraseña input -->
+     <!-- password input -->
     <div class="form-floating">
       <input type="password" class="form-control" name="password" placeholder="Ingrasa tu contraseña">
       <label class="form-label" >Contraseña</label>
     </div>
-     
-  <button class="w-100 btn btn-lg btn-primary " value="ingresar" style="margin-top: 20px;">Ingresar</button>
+     <!-- btn regist -->
+  <button class="w-100 btn btn-lg btn-info " value="ingresar" style="margin-top: 20px;">Ingresar</button>
 
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> recordar usuario
       </label>
-      <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+      <p class="mt-5 mb-3">&copy; 2021–2021</p>
     </div>
     
   </form>
 </div>
-
+<!-- footer -->
 <footer>
    {{>footer}} 
 </footer>

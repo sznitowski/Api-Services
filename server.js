@@ -28,7 +28,7 @@ app.set("views", path.join(__dirname, "client/views"));
 app.use("/users", servicesRouter);
 
  app.get("/", (req, res) => {
-  res.render("home", {
+  res.render("services", {
   });
 }); 
 
@@ -44,7 +44,6 @@ app.use("/users", servicesRouter);
  app.get("/list", (req, res) => {
   res.render("services");
 }); 
-
 
 // port
 app.listen(3000, () => {

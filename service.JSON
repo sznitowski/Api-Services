@@ -1,7 +1,6 @@
 [
     {
         "service": "artesano",
-        "img": "https://image.flaticon.com/icons/png/512/3305/3305142.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -10,7 +9,6 @@
     },
     {
         "service": "albañil",
-        "img": "https://image.flaticon.com/icons/png/512/2827/2827375.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -19,7 +17,6 @@
     },
     {
         "service": "carpintero",
-        "img": "https://image.flaticon.com/icons/png/512/307/307963.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -28,7 +25,6 @@
     },
     {
         "service": "cerrajero",
-        "img": "https://image.flaticon.com/icons/png/512/4766/4766921.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -37,7 +33,6 @@
     },
     {
         "service":"chofer",
-        "img": "https://image.flaticon.com/icons/png/512/3295/3295340.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -46,7 +41,6 @@
     },
     {
         "service":"cocinero",
-        "img": "https://image.flaticon.com/icons/png/512/1830/1830839.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -55,7 +49,6 @@
     },
     {
         "service":"costurera",
-        "img": "https://image.flaticon.com/icons/png/512/323/323960.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -64,7 +57,6 @@
     },
     {
         "service":"electricista",
-        "img": "https://image.flaticon.com/icons/png/512/307/307943.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -73,7 +65,6 @@
     },
     {
         "service":"enfermera",
-        "img": "https://image.flaticon.com/icons/png/512/2855/2855492.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -82,7 +73,6 @@
     },
     {
         "service":"fumigador",
-        "img": "https://image.flaticon.com/icons/png/512/3186/3186116.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -91,7 +81,6 @@
     },
     {
         "service":"gasista matriculado",
-        "img": "https://image.flaticon.com/icons/png/512/4297/4297542.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -100,7 +89,6 @@
     },
     {
         "service":"herrero",
-        "img": "https://image.flaticon.com/icons/png/512/2670/2670334.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -109,7 +97,6 @@
     },
     {
         "service":"jardinero",
-        "img": "https://image.flaticon.com/icons/png/512/1655/1655006.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -118,7 +105,6 @@
     },
     {
         "service":"medico",
-        "img": "https://image.flaticon.com/icons/png/512/921/921130.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -127,7 +113,6 @@
     },
     {
         "service":"mecanico",
-        "img": "https://image.flaticon.com/icons/png/512/3118/3118279.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -136,7 +121,6 @@
     },
     {
         "service":"modista",
-        "img": "https://image.flaticon.com/icons/png/512/2317/2317967.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -145,7 +129,6 @@
     },
     {
         "service":"mucama",
-        "img": "https://image.flaticon.com/icons/png/512/3275/3275522.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -154,7 +137,6 @@
     },
     {
         "service":"niñera",
-        "img": "https://image.flaticon.com/icons/png/512/3567/3567386.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -163,7 +145,6 @@
     },
     {
         "service":"panadero",
-        "img": "https://image.flaticon.com/icons/png/512/2422/2422015.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -172,7 +153,6 @@
     },
     {
         "service":"peluquero",
-        "img": "https://image.flaticon.com/icons/png/512/1711/1711223.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -181,7 +161,6 @@
     },
     {
         "service":"plomero",
-        "img": "https://image.flaticon.com/icons/png/512/4490/4490412.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -190,7 +169,6 @@
     },
     {
         "service":"pintor",
-        "img": "https://image.flaticon.com/icons/png/512/1995/1995491.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -199,7 +177,6 @@
     },
     {
         "service":"podologo",
-        "img": "https://image.flaticon.com/icons/png/512/3468/3468032.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -208,7 +185,6 @@
     },
     {
         "service":"profesor/a particular",
-        "img": "https://image.flaticon.com/icons/png/512/3750/3750020.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -217,7 +193,6 @@
     },
     {
         "service":"repartidor o servimoto",
-        "img": "https://image.flaticon.com/icons/png/512/2830/2830305.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -226,7 +201,6 @@
     },
     {
         "service":"sastre",
-        "img": "https://image.flaticon.com/icons/png/512/2175/2175668.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -235,7 +209,6 @@
     },
     {
         "service": "seguridad",
-        "img": "https://image.flaticon.com/icons/png/512/1022/1022331.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -244,7 +217,6 @@
     },
     {
         "service":"tecnico electronico",
-        "img": "https://image.flaticon.com/icons/png/512/1090/1090811.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -253,7 +225,6 @@
     },
     {
         "service":"tecnico en refrigeracion",
-        "img": "https://image.flaticon.com/icons/png/512/4752/4752565.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -261,8 +232,7 @@
         "contact":""
     },
     {
-        "service":"Vendedor",
-        "img": "https://image.flaticon.com/icons/png/512/1312/1312276.png",
+        "service":"vendedor",
         "name":"",
         "password":"",
         "passwordConfirm":"",
@@ -271,7 +241,6 @@
     },
     {
         "service":"zapatero",
-        "img": "https://image.flaticon.com/icons/png/512/2317/2317982.png",
         "name":"",
         "password":"",
         "passwordConfirm":"",

@@ -1,30 +1,56 @@
 <header>
- <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+
+ <nav class="navbar navbar-expand-lg text-primary" style="padding-top: 40px; padding-bottom: 40px; background-color:darkslategray">
     <img style="width:60px"; src="../img/img.png"/>
+
    <div class="container-fluid">
-       <a class="navbar-brand"><h2 class="text-dark">Api Services</h2></a>
+       <a class="navbar-brand"><h2 class="text-light">Api Services</h2></a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mob-navbar" aria-label="Toggle">
       <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="mob-navbar">
+         
      <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+
        <li class="nav-item">
-          <a class="btn btn-dark btn-outline-light" href="http://localhost:3000/">Inicio</a>
+          <a class="btn btn-outline-info" href="/users/list">Servicios</a>
        </li>
+
        <li class="nav-item">
-          <a class="btn btn-dark btn-outline-light" href="/users/list">Servicios</a>
+          <a class="btn btn-outline-info" href="/users/showCreate">Registrarse</a>
        </li>
+
        <li class="nav-item">
-          <a class="btn btn-dark btn-outline-light" href="/users/showCreate">Registrarse</a>
+          <a class="btn btn-outline-info" href="/users/login">Login</a>
        </li>
+
        <li class="nav-item">
-          <a class="btn btn-dark btn-outline-light" href="/users/login">Login</a>
+          <a class="btn btn-outline-info" href="#Contact">Contacto</a>
        </li>
-       <li class="nav-item">
-          <a class="btn btn-dark btn-outline-light" href="#Contact">Contacto</a>
-       </li>
+
      </ul>
+
     </div>
   </div>
+
  </nav>
+ 
 </header>
+
+
+{{!-- <div class="row d-flex justify-content-center">
+    {{#each users}}
+    <div class="main-user">
+	    <p> Servicio: {{this.service}} </p>
+	    <p> Nombre: {{this.name}} </p>
+      <p> breve descripcion: {{this.description}} </p>
+	    <p> Contacto: {{this.contact}}</p>
+	    <p> Ubicacion: {{this.location}}</p>
+      <div class="bg-light clearfix" style="display:flex;">
+      <button class="btn btn-info btn-outline-light" onclick="viewUserDetail('{{this.id}}')">Modificar</button>
+      <button class="btn btn-info btn-outline-light" onclick='deleteUser("{{this.id}}", "{{this.service}}", "{{this.name}}")'>Eliminar</button>
+    </div>
+    </div>
+    {{/each}}
+</div> --}}

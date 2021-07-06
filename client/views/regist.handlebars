@@ -2,8 +2,8 @@
 
 <div class="row-form">
 <form class="user-form" action="/users/newService" method="POST">
-  <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
-    <h2 class="h3 mb-3 fw-normal">Por favor, ingrese sus datos.</h2>
+  <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px ; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
+    <h2 class="h3 mb-3 fw-normal" style="color: black">Por favor, ingrese sus datos.</h2>
 
    <!-- Nombre input -->
   <div class="form-floating">
@@ -57,19 +57,22 @@
 
   <!-- Contraseña input -->
    <div class="form-floating">
-    <input type="password" class="form-control" name="password" placeholder="Ingrasa tu contraseña">
+    <input type="password" class="form-control" name="password" placeholder="Ingresa tu contraseña">
     <label class="form-label" >contraseña</label>
   </div>
+
   <!-- Repetir contraseña input -->
   <div class="form-floating">
     <input type="password" class="form-control" name="passwordConfirm" placeholder="Confirma tu contraseña"/>
     <label class="form-label" >confirmar contraseña</label>
   </div>
+
   <!-- Email input -->
   <div class="form-floating">
-    <input type="email" name="contact" class="form-control" placeholder="Ingrasa tu E-mail"/> 
-    <label class="form-label">Correo electronico</label>  
+    <input type="email" name="contact" class="form-control" placeholder="Ingresa tu E-mail"/> 
+    <label class="form-label">Correo electrónico</label>  
   </div>
+  
   <!-- Ubicacion input -->
   <div class="form-floating">
     <input type="text" name="location" class="form-control" list="citynames" placeholder="Filtra por ubicacion"/> 
@@ -94,31 +97,21 @@
         <option value="Graneros">
       </datalist>
   </div>
-          
-  <!-- Img -->
-  <div class="form-floating">
-    <input oninput="updatePreview()" type="text" name="coverUrl" class="form-control" placeholder="añade una URL de imagen" value="{{img.coverUrl}}"/>
-    <label for="coverUrl">URL de img: </label>
-  </div>
-    <img id="cover-preview"> 
-     <button type="submit" class="btn btn-primary btn-block mb-4" value="Guardar">Guardar</button>
 
-      <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+  <!-- información adicional input -->
+  <div class="form-floating">
+    <input type="text" name="description" class="form-control" placeholder="información adicional"/> 
+    <label class="form-label">Breve descripción</label>  
+  </div>
+          
+     <button type="submit" class="btn-lg btn-info btn-block mb-4" value="Guardar">Guardar</button>
+
+      <p class="mt-5 mb-3">&copy; 2021–2021</p>
   </div>
  </form>
 </div> 
 
-<script>
-
-  function updatePreview() {
-    const previewImg = document.getElementById("cover-preview");
-    const inputUrl = document.getElementById("coverUrl");
-
-    previewImg.src = inputUrl.value;
-  }
-
-</script>
-
+{{!-- footer --}}
 <footer>
    {{>footer}} 
 </footer>

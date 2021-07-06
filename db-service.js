@@ -29,30 +29,6 @@ function getAllUsersByService(service, cbError, cbData) {
   });
 }
 
-//  consultar en la base de datos por ubicacion, 123 probando
-/*   function getAllUsersByLocation(location, cbError, cbData) {
-  mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
-    if (err) {
-      console.log("Hubo un error conectando con el servidor:", err);
-      cbError(err);
-      return;
-    }
-    const UsersLocation = conn.db(dbName).collection(UsersCollName);
-
-      UsersLocation.find({ location: {$regex: location} }).toArray(
-      (err, data) => {
-        if (err) {
-          console.log("Hubo un error convirtiendo la consulta a Array:", err);
-          conn.close();
-          return;
-        }
-
-        cbData(data);
-      }
-    );
-  });
-} */
-
 // crear usuario
 const insertUser = (newUser, cbError, cbOk) => {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {
@@ -91,7 +67,7 @@ const updateUser = (id, newData, cbError, cbOk) => {
       {
         $set: {
           service: newData.service,
-          img: newData.coverUrl,
+          //img: newData.coverUrl,
           name: newData.name,
           location: newData.location,
           contact: newData.contact,
@@ -160,9 +136,9 @@ const logUser = (credentials, cbError, cbData) => {
   });
 };
 
+
 module.exports = {
   getAllUsersByService,
-  //getAllUsersByLocation,
   insertUser,
   updateUser,
   deleteUser,

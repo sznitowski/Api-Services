@@ -5,9 +5,9 @@ function formatUserForView(dbUser) {
     name: dbUser.name,
     password: dbUser.password,
     passwordConfirm: dbUser.passwordConfirm,
+    description: dbUser.description,
     contact: dbUser.contact,
     location: dbUser.location,
-    coverUrl: dbUser.img,
   };
 
   return formattedUser;
@@ -24,11 +24,12 @@ function formatUserListForView(dbUserList) {
 function isValidUserData(data) {
   if (!data.service) return false;
   if (!data.name) return false;
-  if (!data.name) return false;
   if (!data.password) return false;
   if (!data.passwordConfirm) return false;
+  if (!data.description) return false;
+  if (!data.contact) return false;
   if (!data.location) return false;
-  if (!data.coverUrl) return false;
+//  if (!data.coverUrl) return false;
 
   // No errors
   return true;

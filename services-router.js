@@ -2,7 +2,6 @@ const express = require("express");
 const dbService = require("./db-service");
 const utils = require("./utils");
 const path = require("path");
-//const session = require("express-session");
 const router = express.Router();-
 
 
@@ -34,31 +33,6 @@ router.use(express.static(path.join(__dirname, "client")));
   );
 });
 
-// buscar por ubicacion
-/*  router.get("/listLocation", (req, res) => {
-  let location = ""; 
-  const findUsersByLocation =  req.query.location ||"";
-
- dbService.getAllUsersByLocation(
-   findUsersByLocation.toLowerCase(),
-
-   (err) => {
-     res.render("error", {
-       error: err,
-     });
-     return;
-   },
-   (data) => {
-     res.render("services", {
-       data: utils.formatUserListForView(data),
-       location,
-
-     });
-     return;
-   }
- );
-}); */
-
 // crear usuario
 router.get("/showCreate", (req, res) => {
   res.render("regist", {});
@@ -73,21 +47,21 @@ router.post("/newService", (req, res) => {
     });
     return;
   }
-  // validaciones al crear usuario
+
+  // user validation
   if (req.body.name && req.body.password && req.body.passwordConfirm) {
 
-    // Verifico que la clave y su repetición coincidan
-    if (req.body.password == req.body.passworConfirm) {
+    // validate password
+    if (req.body.password == req.body.passwordConfirm) {
 
-   
   const newUser = {
     service: req.body.service,
     name: req.body.name,
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
-    location: req.body.location,
+    description: req.body.description,
     contact: req.body.contact,
-    img: req.body.coverUrl,
+    location: req.body.location,
   };
 
   dbService.insertUser(
@@ -104,6 +78,7 @@ router.post("/newService", (req, res) => {
 }else{
   (res.render("error", {
     error:"faltan datos.",
+    
   }))
 }
 
@@ -187,7 +162,7 @@ router.post("/login", (req, res) => {
 });
 
 // session
-/*   router.get("/", (req, res) => {
+  /*  router.get("/", (req, res) => {
   user.find((err, user) => {
     console.log(user);
   });
@@ -196,7 +171,6 @@ router.post("/sessions"), (req, res) => {
   user.findOne({ name: req.body.name, password:req.body.password}), (err, user) => {
     req.session.user_id = user._id
   }
-} 
- */
+}  */
 
 module.exports = router;

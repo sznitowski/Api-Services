@@ -5,11 +5,7 @@
   
   <img class="mb-4" src="../img/login.png" width="100" style="margin-top: 20px; border: 8px solid rgb(235, 224, 224); border-radius: 100% ">
   <h2 class="h3 mb-3 fw-normal">Modifica tus datos</h2>
-  {{!-- Img --}}
-  <div class="form-floating">
-   <input type="text" name="id" value="{{user.id}}" style="display: none;" />
-    <img class="user-cover" name="coverUrl" src={{user.coverUrl}}/>
-  </div>
+
   {{!-- input nombre --}}
    <div class="form-floating">
    <input type="text" class="form-control" name="name" value="{{user.name}}" placeholder="cambiar tu usuario"/>
@@ -58,11 +54,19 @@
             <option value="zapatero">
           </datalist>
   </div>
+
     <!-- Email input -->
     <div class="form-floating">
     <input type="email" name="contact" class="form-control" value="{{user.contact}}" placeholder="cambiar tu E-mail"/>
     <label class="form-label">Correo electronico</label>
     </div>
+
+    <!-- informacion adicional input -->
+    <div class="form-floating">
+    <input type="text" name="description" class="form-control" placeholder="información adicional"/> 
+    <label class="form-label">Breve descripción</label>  
+    </div>
+    
      <!-- Ubicacion input -->
     <div class="form-floating">
     <input type="text" name="location" class="form-control" list="citynames" value="{{user.location}}" placeholder="cambiar tu ubicacion" />
@@ -86,11 +90,6 @@
             <option value="La Cocha">
             <option value="Graneros">
           </datalist>
-    </div>
-    <!-- Img -->
-    <div class="form-floating">
-    <input type="text" name="coverUrl" class="form-control" value="{{user.coverUrl}}" placeholder="cambiar la imagen"/>
-    <label for="coverUrl">URL de img</label>
     </div>
 
     <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar">Actualizar</button>
