@@ -32,13 +32,13 @@
 
 # Login
 
-<img src="../client/img/img-login.png">
+<img src="../file:///C:/Users/Acer/Api-Services/client/img/img-login.png">
 
 # Registro
-<img src="..img-regist.png">
+<img src="file:///C:/Users/Acer/Api-Services/client/img/img-login.png">
 
 # Lista de Servicios
-<img src="../img-services.png">
+<img src="./file:///C:/Users/Acer/Api-Services/client/img/img-login.png">
 
 
 
