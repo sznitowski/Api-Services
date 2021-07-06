@@ -31,12 +31,13 @@
 # Comit: Este es un proyecto final dictado por https://www.comunidadit.org/, Cabe destacar que aun esta en desarrollo, cualquier crítica sera bienvenida.
 
 # Login
-<img src="../img-login.png">
+<img src="img-login.png">
 
 # Registro
-<img src="../img-regist.png">
+<img src="img-regist.png">
 
 # Lista de Servicios
-<img src="../img-services.png">
+<img src="img-services.png">
+
 
 
