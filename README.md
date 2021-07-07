@@ -1,6 +1,6 @@
 <h1>⚙️Api de servicios⚙️</h1>
 
-# En esta App podemos almacenar en nuestra base de datos registro de un nuevo usuario, que se puede configurar para ofrecer algun servicio, como por ejemplo, electricista, plomero, pintor, etc, o tambien podemos realizar busquedas sin necesidad de crear un usuario. 
+ <p>En esta App podemos almacenar en nuestra base de datos registro de un nuevo usuario, que se puede configurar para ofrecer algun servicio, como por ejemplo, electricista, plomero, pintor, etc, o tambien podemos realizar busquedas sin necesidad de crear un usuario.</p>
 
  <h1>🛠️ En esta api se realizo con 🛠️</h1>
 
