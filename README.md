@@ -28,7 +28,7 @@
 
 # Autores: Valentin Sznitowski
 
-# Comit: Este es un proyecto final dictado por https://www.comunidadit.org/, Cabe destacar que aun esta en desarrollo, cualquier crítica sera bienvenida.
+ <p>Comit: Este es un proyecto final dictado por https://www.comunidadit.org/, Cabe destacar que aun esta en desarrollo, cualquier crítica sera bienvenida.</p>
 
 # Login!
 ![img-login](https://user-images.githubusercontent.com/78902757/124687299-fddf2b80-deaa-11eb-926e-4996692288b3.png)
