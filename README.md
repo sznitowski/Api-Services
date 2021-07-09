@@ -1,8 +1,8 @@
-<h1>⚙️Api de servicios⚙️</h1>
+<h2>⚙️Api de servicios⚙️</h2>
 
  <p>En esta App podemos almacenar en nuestra base de datos registro de un nuevo usuario, que se puede configurar para ofrecer algun servicio, como por ejemplo, electricista, plomero, pintor, etc, o tambien podemos realizar busquedas sin necesidad de crear un usuario.</p>
 
- <h1>🛠️ En esta api se realizo con 🛠️</h1>
+ <h5>🛠️ En esta api se realizo con 🛠️</h5>
 
 <ul>
 <li>Node Js</li>
@@ -15,7 +15,7 @@
 <li>Git</li>
 </ul>
 
-<h1>🔧 Para poder utilizar, es necesario instalar los siguientes paquetes y dependencias 🔧</h1>
+<h5>🔧 Para poder utilizar, es necesario instalar los siguientes paquetes y dependencias 🔧</h5>
 
 <ul>
 <li>npm i express</li>
@@ -23,10 +23,9 @@
 <li>npm i Mongodb</li>
 <li>npm i express-handlebars</li>
 <li>npm i body-parser</li>
-<li>npm i multer</li>
 </ul>
 
-# Autores: Valentin Sznitowski
+<h5> Autores: Valentin Sznitowski</h5>
 
  <p>Comit: Este es un proyecto final dictado por https://www.comunidadit.org/, Cabe destacar que aun esta en desarrollo, cualquier crítica sera bienvenida.</p>
 

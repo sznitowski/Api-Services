@@ -162,7 +162,7 @@ router.post("/login", (req, res) => {
 });
 
 // session
-  /*  router.get("/", (req, res) => {
+    router.get("/", (req, res) => {
   user.find((err, user) => {
     console.log(user);
   });
@@ -171,6 +171,6 @@ router.post("/sessions"), (req, res) => {
   user.findOne({ name: req.body.name, password:req.body.password}), (err, user) => {
     req.session.user_id = user._id
   }
-}  */
+} 
 
 module.exports = router;

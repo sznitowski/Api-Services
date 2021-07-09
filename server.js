@@ -2,7 +2,7 @@ const express = require("express");
 const expHbs = require("express-handlebars");
 const path = require("path");
 const servicesRouter = require("./services-router");
-//const session = require("express-session");
+const session = require("express-session");
 
 
 const app = express();
@@ -18,7 +18,7 @@ app.engine(
   expHbs({
     defaultLayout: "main",
     layoutsDir: "client/views/layouts",
-  /* partialsDir: "client/views/partials", */
+    partialsDir: "client/views/partials",
   })
 );
 app.set("view engine", "handlebars");
@@ -33,17 +33,11 @@ app.use("/users", servicesRouter);
 }); 
 
 // Configuración de sesiones
-/* app.use(session({
+ app.use(session({
   secret: "asd123asd123",
   resave: false,
   saveUninitialized: false
-}))  */
-
-
-// buscar
- app.get("/list", (req, res) => {
-  res.render("services");
-}); 
+})) 
 
 // port
 app.listen(3000, () => {

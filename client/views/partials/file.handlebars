@@ -1,0 +1,22 @@
+<div class="cargarCv">
+    <div class="espacio">{{leyenda}}</div>
+    {{#if datos}}
+    <p>Archivo subido corectamente</p>
+    {{else}}
+    <form action="cargarCv" method="post" enctype="multipart/form-data">
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required><br><br>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido" required><br><br>
+        <input type="email" name="mail" id="mail" placeholder="Email" required><br><br>
+        <input type="file" name="archivo" id="archivo" required><br><br>
+        <input type="submit" value="Cargar cv" name="cargar" id="cargar">
+    </form>
+    {{/if}}
+</div>
+///
+ <div class="form-floating">
+    <input type="file" class="form-control" name="file" placeholder="Ingresa tu usuario">
+    <label class="form-label" >File</label>
+  </div>
+
+
+  
