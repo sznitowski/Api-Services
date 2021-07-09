@@ -5,7 +5,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service": "albañil",
@@ -13,7 +14,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service": "carpintero",
@@ -21,7 +23,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service": "cerrajero",
@@ -29,7 +32,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"chofer",
@@ -37,7 +41,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"cocinero",
@@ -45,7 +50,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"costurera",
@@ -53,7 +59,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"electricista",
@@ -61,7 +68,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"enfermera",
@@ -69,7 +77,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"fumigador",
@@ -77,7 +86,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"gasista matriculado",
@@ -85,7 +95,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"herrero",
@@ -93,7 +104,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"jardinero",
@@ -101,7 +113,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"medico",
@@ -109,7 +122,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"mecanico",
@@ -117,7 +131,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"modista",
@@ -125,7 +140,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"mucama",
@@ -133,7 +149,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"niñera",
@@ -141,7 +158,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"panadero",
@@ -149,7 +167,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"peluquero",
@@ -157,7 +176,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"plomero",
@@ -165,7 +185,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"pintor",
@@ -173,7 +194,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"podologo",
@@ -181,7 +203,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"profesor/a particular",
@@ -189,7 +212,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"repartidor o servimoto",
@@ -197,7 +221,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"sastre",
@@ -205,7 +230,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service": "seguridad",
@@ -213,7 +239,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"tecnico electronico",
@@ -221,7 +248,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"tecnico en refrigeracion",
@@ -229,7 +257,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"vendedor",
@@ -237,7 +266,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     },
     {
         "service":"zapatero",
@@ -245,7 +275,8 @@
         "password":"",
         "passwordConfirm":"",
         "location":"",
-        "contact":""
+        "contact":"",
+        "description":""
     }
     ]
                  

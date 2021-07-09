@@ -32,10 +32,10 @@
 # Login!
 ![img-login](https://user-images.githubusercontent.com/78902757/124687299-fddf2b80-deaa-11eb-926e-4996692288b3.png)
 
-# Registro
+# Registro!
 ![img-regist](https://user-images.githubusercontent.com/78902757/124687316-06cffd00-deab-11eb-86ca-83294becdf8f.png)
 
-# Lista de Servicios
+# Lista de Servicios!
 ![img-services](https://user-images.githubusercontent.com/78902757/124687323-0c2d4780-deab-11eb-8adb-c001657a1401.png)
 
 
