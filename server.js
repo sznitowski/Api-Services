@@ -2,6 +2,7 @@ const express = require("express");
 const expHbs = require("express-handlebars");
 const path = require("path");
 const servicesRouter = require("./services-router");
+const PORT = 3000;
 //const session = require("express-session");
 
 
@@ -11,6 +12,7 @@ app.use(express.static(path.join(__dirname, "client")));
 // Body parsers
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.listen(process.env.PORT, '0.0.0.0');
 
 // Handlebars
 app.engine(
@@ -40,6 +42,6 @@ app.use("/users", servicesRouter);
 }))  */
 
 // port
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("EL Servidor corre en el puerto 3000...");
 });
