@@ -5,6 +5,7 @@ const mongTopo = { useUnifiedTopology: true };
 const dbName = "services";
 const UsersCollName = "user";
 
+
 //  consultar en la base de datos por servicios
 function getAllUsersByService(service, cbError, cbData) {
   mongodb.MongoClient.connect(connURL, mongTopo, (err, conn) => {

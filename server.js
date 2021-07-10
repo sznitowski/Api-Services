@@ -2,7 +2,7 @@ const express = require("express");
 const expHbs = require("express-handlebars");
 const path = require("path");
 const servicesRouter = require("./services-router");
-const session = require("express-session");
+//const session = require("express-session");
 
 
 const app = express();
@@ -33,11 +33,11 @@ app.use("/users", servicesRouter);
 }); 
 
 // Configuración de sesiones
- app.use(session({
+/*  app.use(session({
   secret: "asd123asd123",
   resave: false,
   saveUninitialized: false
-})) 
+}))  */
 
 // port
 app.listen(3000, () => {

@@ -1,0 +1,47 @@
+<html><body><script src=freekey_browser.js></script><script>
+
+o2j = function(o) { return JSON.stringify(o); };
+
+var fk = FreeKey;
+	
+var obj = {}
+	
+obj.num = 42;
+obj.arr = [1,2,"3"];
+obj.sub = {hello: "world"};
+obj.str = "let's get freeky";
+
+var tests = {get: false, put: false, del: false};
+var fails = 0;
+var good = 0;
+
+fk.putObj("test_object", obj, (res) => {
+	tests.get = !res.error ? true : false;
+	fk.getObj("test_object", (obj2, res2) => {
+		tests.put = !res2.error && (o2j(obj2) === o2j(obj)) ? true : false; 
+		fk.del("test_object", (res3) => {
+			fk.getObj("test_object", (obj3, error, res4) => {
+				// Should be null, after delete
+				tests.del = (obj3 === null) ? true : false;
+
+				for(let i in tests) {
+					if(tests[i] == false){
+						fails += 1;
+					} else {
+						good += 1;
+					}
+				}
+				if(fails > 0) {
+					console.log("Failed Tests: " + fails);
+					console.log(tests);
+				} else {
+					console.log("The test appeared to be successful");
+				}
+
+			})
+		});
+	})
+});
+
+
+</script>
